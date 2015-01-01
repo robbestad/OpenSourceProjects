@@ -22,7 +22,10 @@ var Application = React.createClass({
     return (
       <div className="container main-container">
         <header>
-          <h1 className="text-muted">React StickyDiv</h1>
+          <Nav bsStyle="pills" className="pull-right">
+            <NavItemLink to="stickydiv">StickyDiv</NavItemLink>
+          </Nav>
+          <h1 className="text-muted">Open Source projects</h1>
         </header>
         <RouteHandler />
       </div>
@@ -38,7 +41,7 @@ var StickyDemo = require('./react-example'),
 // Define react-router routes
 var routes = (
   <Route name="app" path="/" handler={Application}>
-    <Route name="react" handler={StickyDemo} />
+    <Route name="stickydiv" path="stickydiv" handler={StickyDemo} />
     <DefaultRoute handler={StickyDemo} />
   </Route>
 );
