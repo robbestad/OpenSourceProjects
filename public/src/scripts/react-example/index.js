@@ -23,7 +23,7 @@ var ReactExample = React.createClass({
     };
   },
   componentDidMount: function() {
-    $.get('STICKY.html', _.bind(function(data) {
+    $.get('assets/STICKY.html', _.bind(function(data) {
       this.setState({md: data});
     }, this));
   },

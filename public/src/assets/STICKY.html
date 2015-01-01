@@ -1,0 +1,34 @@
+<p>React Component that sets a div (or any HTML element) sticky when it's scrolled beyond view.</p>
+
+<h2>Installation</h2>
+
+<pre><code>% npm install react-stickydiv --save
+</code></pre>
+
+<h2>Usage</h2>
+
+<h4>With JSX</h4>
+
+<pre><code>var StickyDiv = require('react-stickydiv');
+
+MyComponent = React.createClass({
+  render: function() {
+     return (
+       &lt;StickyDiv&gt;
+         I'm Sticky
+       &lt;/StickyDiv&gt;
+    );
+  }
+});
+</code></pre>
+
+<h4>Without JSX</h4>
+
+<pre><code>  var MyComponent = React.createClass({
+      render: function() {
+          return React.createElement(StickyDiv, null, React.createElement("div", null, "I'm Sticky"));
+      }
+  });
+</code></pre>
+
+
