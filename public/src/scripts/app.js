@@ -50,7 +50,7 @@ var routes = (
 );
 
 // Run the router
-Router.run(routes, Router.HistoryLocation, function(Handler){
+Router.run(routes, function(Handler){
   // Render the root app view-controller
   React.render(<Handler />, $('#app-root')[0]);
 });
