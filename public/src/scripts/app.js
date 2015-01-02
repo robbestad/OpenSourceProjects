@@ -23,7 +23,8 @@ var Application = React.createClass({
       <div className="container main-container">
         <header>
           <Nav bsStyle="pills" className="pull-right">
-            <NavItemLink to="stickydiv">StickyDiv</NavItemLink>
+            <NavItemLink to="stickydiv">Sticky Div</NavItemLink>
+            <NavItemLink to="markdown">Markdown Include</NavItemLink>
           </Nav>
           <h1 className="text-muted">Open Source projects</h1>
         </header>
@@ -34,20 +35,22 @@ var Application = React.createClass({
 });
 
 // Require individual app components
-var StickyDemo = require('./react-example'),
-  RefluxExample = require('./reflux-example'),
+var StickyDemo = require('./stickydiv'),
+    MarkdownInclude = require('./markdown'),
   MongooseExample = require('./mongoose-example');
 
 // Define react-router routes
 var routes = (
   <Route name="app" path="/" handler={Application}>
     <Route name="stickydiv" path="stickydiv" handler={StickyDemo} />
+    <Route name="markdown" path="markdown" handler={MarkdownInclude} />
     <DefaultRoute handler={StickyDemo} />
+
   </Route>
 );
 
 // Run the router
-Router.run(routes, function(Handler){
+Router.run(routes, Router.HistoryLocation, function(Handler){
   // Render the root app view-controller
   React.render(<Handler />, $('#app-root')[0]);
 });
