@@ -20,7 +20,7 @@ module.exports = React.createClass({
     return (
       <div>
         <Sticky><h2>Markdown</h2></Sticky>
-        <Markdown2Html file="assets/MARKDOWN2HTML.md" />
+        <Markdown2Html src="assets/MARKDOWN2HTML.md" />
         </div>
     );
   }
